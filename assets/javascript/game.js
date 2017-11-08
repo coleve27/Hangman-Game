@@ -1,11 +1,34 @@
-alert("yes");
-alert("no");
-//press any key to start //
+//Proof of Concepts//
 
+//can I connect this js to html? (yes)//
+alert("yes");
+
+//can I push changes from my work computer? (yes)//
+alert("no");
+
+//can I split a string into individual letters? (yes)//
+var str = "How?";
+var res = str.split("");
+console.log(res);
+
+
+//can I log user key inputs? (yes)//
 document.onkeyup = function (e) {
   console.log("anything");
 }
+
+
+
+
+
+
+
+//press any key to start //
+
+
 // var x = document.getElementById('element') .addEventListener("click", displayDate);
+
+
 
 
 
@@ -18,6 +41,12 @@ var mysteryWord = [
   "Toyota"
 ]
 
+
+
+
+//
+// var res = mysteryWord.split("");
+// console.log(res);
 
 // for loop pick words out of wordbank <-- Crap
 //math random multiply by words in the array//
