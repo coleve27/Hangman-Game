@@ -1,4 +1,5 @@
 alert("yes");
+alert("no");
 //press any key to start //
 
 document.onkeyup = function (e) {
