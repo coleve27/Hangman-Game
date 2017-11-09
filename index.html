@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>hangman</title>
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-  <script type="text/javascript" src="assets/javascript/game.js"> </script>
+
 </head>
 
 <body>
@@ -14,30 +14,30 @@
     logo
   </div>
   <div class="gamecontainer">
-    <div class="instructions" id="element">
+    <div class="instructions" id="input">
       <p>
         Press any key to get started!
       </p>
     </div>
     <div class="wins">
       Wins
-      <div class="wincount">
-        1
+      <div class="wincount" id="wincount">
+        0
       </div>
     </div>
-    <div class="currentword">
-      current word
+    <div class="currentword" id="guess">
+
     </div>
     <div class="guesses">
       Number of Guesses Remaining
-      <div class="guesscount">
+      <div class="guessesRemaining" id="guesscount">
         15
       </div>
     </div>
     <div class="lettersguessed">
       Letters already guessed
-      <div class="lettersguesseddisplay">
-        abc
+      <div class="lettersguesseddisplay" id="userletters">
+        
       </div>
     </div>
 
@@ -45,5 +45,5 @@
 
 
 </body>
-
+  <script type="text/javascript" src="assets/javascript/game.js"> </script>
 </html>

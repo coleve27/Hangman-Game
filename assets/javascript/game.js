@@ -1,78 +1,96 @@
-//Proof of Concepts//
+//game begins//
 
-//can I connect this js to html? (yes)//
-alert("yes");
+//number of wins is set to 0//
+var wins = 0;
 
-//can I push changes from my work computer? (yes)//
-alert("no");
+//array of words you can pick from//
 
-//can I split a string into individual letters? (yes)//
-var str = "How?";
-var res = str.split("");
-console.log(res);
-
-
-//can I log user key inputs? (yes)//
-document.onkeyup = function (e) {
-  console.log("anything");
-}
-
-
-
-
-
-
-
-//press any key to start //
-
-
-// var x = document.getElementById('element') .addEventListener("click", displayDate);
-
-
-
-
-
-
-//word is picked out of array and underscores correspond to letters//
-
-var mysteryWord = [
+var carList = [
   "subaru",
   "volvo",
-  "Toyota"
-]
+  "toyota",
+  "saab",
+  "lexus",
+];
 
+//word is picked from carList and split into characters//
 
+var wordindex = 0;
 
+var word = carList[wordindex];
 
-//
-// var res = mysteryWord.split("");
-// console.log(res);
+var wordarray = word.split("");
 
-// for loop pick words out of wordbank <-- Crap
-//math random multiply by words in the array//
-// split the string into array
-//
-// for loop, inside of a function (replaceUnderscore?),
-//
-// if index( true ) then replace with "_"
+var state = new Array(wordarray.length).fill('_');
 
+// letters guessed is index of 0 //
 
-//user picks a letter and display is updated//
+var guessedLetters = [];
 
+//game begins with variable at 0//
 
+updateGame();
 
+//function logs which key user chooses//
 
+document.onkeyup = function(userkey) {
+  console.log(userkey.key);
 
+  if (guessedLetters.indexOf(userkey.key) !== -1) {
+    console.log(guessedLetters);
+    return;
+  }
 
+  guessedLetters.push(userkey.key);
 
-//if user chooses correclty, letter populates in current word. Nothing is subtracted from guesses remaining, and letter does populate in letters guessed//
+  if (wordarray.indexOf(userkey.key) !== -1) {
 
+    wordarray.forEach(function(item, i) {
+      if (item == userkey.key) state[i] = userkey.key
+    });
+  }
 
-//if user chooses incorrectly, 1 is subtracted from guesses remaining and letter populates in letters guessed//
+  if (guessedLetters.length == 15) {
+    resetGame();
+    return;
+  }
 
+  if (state.indexOf('_') == -1) {
+    wins++;
+    resetGame();
+  }
 
-//if guesses remaining is >0 loop back to next round//
+  updateGame();
 
-//if all letters are populated then add 1 to win and begin new game//
+}
 
-//if guesses = 0 begin a new game//
+//function to reset the game variables to 0//
+
+function resetGame() {
+  wordindex++;
+  word = carList[wordindex];
+  wordarray = word.split("");
+  state = new Array(wordarray.length).fill('_');
+  guessedLetters = [];
+  console.log(wordindex);
+}
+
+//function to update the html//
+
+function updateGame() {
+
+  var winsDiv = document.getElementById("wincount");
+  winsDiv.innerHTML = wins;
+
+  var guessesRemaining = 15 - guessedLetters.length;
+
+  var guessDiv = document.getElementById("guesscount");
+  guessDiv.innerHTML = guessesRemaining;
+
+  var lettersDiv = document.getElementById("userletters");
+  lettersDiv.innerHTML = guessedLetters;
+
+  var stateDiv = document.getElementById("guess");
+  stateDiv.innerHTML = state.join(' ');
+
+}
