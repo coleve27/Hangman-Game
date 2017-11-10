@@ -1,0 +1,83 @@
+body {
+  background-image: url("../images/fastandfurious.jpg");
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 1000px;
+}
+
+
+.logo {
+  height: max-content;
+  width: 100%;
+  text-align: center;
+  margin-top: 10%;
+}
+
+.logo h1 {
+  color: #fbee05;
+  text-shadow: -17px -6px #f33f36;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 60px;
+}
+
+div.gamecontainer {
+  border: 10px;
+  border-style: solid;
+  border-color: #f33f36;
+  height: max-content;
+  width: 50%;
+  text-align: center;
+  padding: 40px;
+  margin-top: 10%;
+  background-color: #fbee05;
+  opacity: .6;
+  font-family: 'Exo 2', sans-serif;
+  line-height: 1.3;
+  font-size: 25px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+}
+
+.instructions{
+  margin: 2%;
+}
+
+.wins {
+  margin: 2%;
+}
+
+.currentword{
+  margin: 2%;
+}
+
+.guessesRemaining {
+  margin: 2%;
+}
+
+.lettersguesseddisplay{
+  margin: 2% 2% 5% 2%;
+}
+
+div.gamecontainer div class="instructions"#input p {}
+
+div.gamecontainer div.wins {}
+
+div.gamecontainer div.wins div class="wincount"#wincount {}
+
+div.gamecontainer div class="currentword"#guess {}
+
+div.gamecontainer div.guesses {}
+
+div.gamecontainer div.guesses div class="guessesRemaining"#guesscount {}
+
+div.gamecontainer div.lettersguessed {}
+
+div.gamecontainer div.lettersguessed div class="lettersguesseddisplay"#userletters {}

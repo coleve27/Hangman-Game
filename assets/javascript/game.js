@@ -6,11 +6,11 @@ var wins = 0;
 //array of words you can pick from//
 
 var carList = [
-  "subaru",
-  "volvo",
-  "toyota",
-  "saab",
-  "lexus",
+  "dominic",
+  "racing",
+  "toretto",
+  "loyalty",
+  "cars",
 ];
 
 //word is picked from carList and split into characters//
